@@ -35,5 +35,6 @@ RUN chmod 777 ${SRV1CV8_REPOSITORY}
 
 VOLUME ${SRV1CV8_REPOSITORY}
 
+RUN service apache2 restart
 EXPOSE 1542 80
 CMD ["/run.sh"]
