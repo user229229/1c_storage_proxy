@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 # apache conf
-COPY ./1c_httpd.conf /etc/apache2/sites-available/1c_httpd.conf
+COPY ./1c_httpd.conf /etc/apache2/sites-available/000-default.conf
 COPY ./1crep.1ccr /var/www/crs/1crep.1ccr
 
 # 1C repo server
