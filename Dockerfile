@@ -20,7 +20,7 @@ ENV SRV1CV8_REPOSITORY /opt/1C/repository
 #RUN wget http://casa.ru/${DIST}.tar.gz -P /tmp --no-check-certificate -q --show-progress -nc --progress=bar:force:noscroll
 
 
-RUN tar xzf ./deb/${DIST}.tar.gz -C /tmp && \
+RUN tar xzf ./${DIST}.tar.gz -C /tmp && \
 	/tmp/setup-full-*-x86_64.run --mode unattended --enable-components config_storage_server,ru && \
 	mkdir -p /var/log/1c/dumps && chmod -R 777 /var/log/1c && \
 	rm -rf /tmp/* && \
