@@ -21,7 +21,7 @@ ENV SRV1CV8_REPOSITORY /opt/1C/repository
 
 ADD ./${DIST}.tar.gz /tmp
 
-RUN /tmp/setup-full-*-x86_64.run --mode unattended --enable-components config_storage_server,ru && \
+RUN /tmp/setup-full-*-x86_64.run --mode unattended --enable-components config_storage_server,ws,ru && \
 	mkdir -p /var/log/1c/dumps && chmod -R 777 /var/log/1c && \
 	rm -rf /tmp/* && \
 	rm -rf /var/lib/apt/lists/*
