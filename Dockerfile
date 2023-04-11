@@ -17,7 +17,7 @@ COPY ./1crep.1ccr /var/www/crs/1crep.1ccr
 # 1C repo server
 ENV SRV1CV8_REPOSITORY /opt/1C/repository
 
-RUN wget http://casa.ru/${DIST}.tar.gz -P /tmp --no-check-certificate 
+RUN wget http://casa.ru/${DIST}.tar.gz -P /tmp --no-check-certificate -q --show-progress
 #| wc -l > /number
 
 
