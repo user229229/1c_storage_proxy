@@ -6,13 +6,15 @@ ENV DIST server64_8_3_22_1750
 
 
 RUN apt-get update && apt-get install -y \
+    apache2 \
 	wget \
 	&& rm -rf /var/lob/apt/lists/*
 
-RUN apt-get install apache2 -y
+# apache conf
 COPY ./httpd.conf /etc/apache2/sites-available/1c_httpd.conf
 COPY ./1crep.1ccr /var/www/crs/1crep.1ccr
 
+# 1C repo server
 ENV SRV1CV8_REPOSITORY /opt/1C/repository
 
 RUN wget http://casa.ru/${DIST}.tar.gz -P /tmp --no-check-certificate | wc -l > /number
