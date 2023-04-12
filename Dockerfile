@@ -17,7 +17,7 @@ COPY ./1crep.1ccr /var/www/crs/1crep.1ccr
 # 1C repo server
 ENV SRV1CV8_REPOSITORY /opt/1C/repository
 
-ADD ./${DIST}.tar.gz /tmp
+ADD ./deb/${DIST}.tar.gz /tmp
 
 RUN /tmp/setup-full-*-x86_64.run --mode unattended --enable-components config_storage_server,ws,ru && \
 	mkdir -p /var/log/1c/dumps && chmod -R 777 /var/log/1c && \
