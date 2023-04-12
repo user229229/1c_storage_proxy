@@ -35,4 +35,4 @@ COPY storage-proxy.py /
 VOLUME ${SRV1CV8_REPOSITORY}
 
 EXPOSE 1542 80 8899
-CMD ["/run.sh"]
+ENTRYPOINT ["/run.sh"]
