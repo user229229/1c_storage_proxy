@@ -7,7 +7,7 @@ ENV DIST server64_8_3_20_2290
 
 RUN apt-get update && apt-get install -y \
     apache2 \
-	wget \
+	python3 \
 	&& rm -rf /var/lib/apt/lists/*
 
 # apache conf
@@ -16,8 +16,6 @@ COPY ./1crep.1ccr /var/www/crs/1crep.1ccr
 
 # 1C repo server
 ENV SRV1CV8_REPOSITORY /opt/1C/repository
-
-#RUN wget http://casa.ru/${DIST}.tar.gz -P /tmp --no-check-certificate -q --show-progress -nc --progress=bar:force:noscroll
 
 ADD ./${DIST}.tar.gz /tmp
 
@@ -32,9 +30,9 @@ RUN chmod +x /run.sh
 RUN mkdir -p ${SRV1CV8_REPOSITORY}
 RUN chmod 777 ${SRV1CV8_REPOSITORY}
 
+COPY storage-proxy.py /
 
 VOLUME ${SRV1CV8_REPOSITORY}
 
-RUN service apache2 restart
-EXPOSE 1542 80
+EXPOSE 1542 80 8899
 CMD ["/run.sh"]
