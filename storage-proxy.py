@@ -87,7 +87,7 @@ class TheServer:
     def on_recv(self):
         data = self.data
         # here we can parse and/or modify the data before send forward	    
-        data2 = re.sub(b'version="8\.3\.\d\d\.\d\d\d\d"', b'version="8.3.22.1750"',  data, 1)
+        data2 = re.sub(b'version="8\.3\.\d\d\.\d\d\d\d"', b'version="8.3.20.2290"',  data, 1)
         #data2 = re.sub(b'8.3.20.1789', b'8.3.15.1830',  data, 1)
         print ("Data length", len(data2))
         self.channel[self.s].send(data2)
