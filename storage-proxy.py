@@ -94,7 +94,7 @@ class TheServer:
 
 if __name__ == '__main__':
     port = 8899
-    server = TheServer('localhost', port)
+    server = TheServer('mail.syspod.ru', port)
     try:
         print ("Server running on port", port)
         server.main_loop()
