@@ -13,7 +13,7 @@ import re
 # But when buffer get to high or delay go too down, you can broke things
 buffer_size = 1048576
 delay = 0.0001
-forward_to = ('host.docker.internal', 80)
+forward_to = ('172.17.0.2', 80)
 #forward_to = ('storage.syspod.ru', 8080)
 
 class Forward:
@@ -94,7 +94,7 @@ class TheServer:
 
 if __name__ == '__main__':
     port = 8899
-    server = TheServer('host.docker.internal', port)
+    server = TheServer('172.17.0.2', port)
     try:
         print ("Server running on port", port)
         server.main_loop()
