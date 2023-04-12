@@ -13,7 +13,7 @@ import re
 # But when buffer get to high or delay go too down, you can broke things
 buffer_size = 1048576
 delay = 0.0001
-forward_to = ('127.0.0.1', 80)
+forward_to = ('localhost', 80)
 #forward_to = ('storage.syspod.ru', 8080)
 
 class Forward:
