@@ -14,7 +14,6 @@ import re
 buffer_size = 1048576
 delay = 0.0001
 forward_to = ('172.17.0.2', 80)
-#forward_to = ('storage.syspod.ru', 8080)
 
 class Forward:
     def __init__(self):
@@ -88,7 +87,6 @@ class TheServer:
         data = self.data
         # here we can parse and/or modify the data before send forward	    
         data2 = re.sub(b'version="8\.3\.\d\d\.\d\d\d\d"', b'version="8.3.20.2290"',  data, 1)
-        #data2 = re.sub(b'8.3.20.1789', b'8.3.15.1830',  data, 1)
         print ("Data length", len(data2))
         self.channel[self.s].send(data2)
 
