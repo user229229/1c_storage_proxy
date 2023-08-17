@@ -13,7 +13,7 @@ import re
 # But when buffer get to high or delay go too down, you can broke things
 buffer_size = 1048576
 delay = 0.0001
-forward_to = ('172.17.0.3', 80)
+forward_to = ('1cRepoProxy', 80)
 
 class Forward:
     def __init__(self):
@@ -92,7 +92,7 @@ class TheServer:
 
 if __name__ == '__main__':
     port = 8899
-    server = TheServer('172.17.0.3', port)
+    server = TheServer('0.0.0.0', port)
     try:
         print ("Server running on port", port)
         server.main_loop()
