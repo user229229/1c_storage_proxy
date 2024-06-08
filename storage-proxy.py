@@ -86,12 +86,12 @@ class TheServer:
     def on_recv(self):
         data = self.data
         # here we can parse and/or modify the data before send forward	    
-        data2 = re.sub(b'version="8\.3\.\d\d\.\d\d\d\d"', b'version="8.3.20.2290"',  data, 1)
+        data2 = re.sub(b'version="8\.3\.\d\d\.\d\d\d\d"', b'version="8.3.24.1548"',  data, 1)
         print ("Data length", len(data2))
         self.channel[self.s].send(data2)
 
 if __name__ == '__main__':
-    port = 8899
+    port = 8999
     server = TheServer('0.0.0.0', port)
     try:
         print ("Server running on port", port)
